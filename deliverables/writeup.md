@@ -1,5 +1,5 @@
 ## Exploratory Data Analysis Project:
-<font size="4">Connecting Citibike to the MTA Network</font> 
+Connecting Citibike to the MTA Network
 
 
 ### Abstract
@@ -38,9 +38,3 @@ The top ten recommended sites and their average weekday traffic are shown in a b
 - Data cleaning and visualization with Pandas
 - Plotting with Matplotlib and Geopandas
 - Querying an API to add a geographical feature
-
-
-
-```python
-
-```
