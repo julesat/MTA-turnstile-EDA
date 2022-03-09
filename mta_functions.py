@@ -46,7 +46,7 @@ def load_citibike_sites():
     citibike_gdf = gpd.GeoDataFrame(df,
                                     geometry=gpd.points_from_xy(df.lng,
                                                                 df.lat),
-                                    crs="EPSG:3857")
+                                    crs="EPSG:4326")
     # excluding Jersey City stations
     citibike_spots = citibike_gdf[citibike_gdf['lng'] > -74.02]
 
@@ -64,8 +64,11 @@ def map_nyc_citibike_docks(geo_df, color='lightseagreen', alpha=0.4):
     fig = plt.figure(num=None, figsize=(14, 10), dpi=80, facecolor='w', edgecolor='k')
     ax = plt.axes()
 
-    city.plot(ax=ax, alpha=alpha, edgecolor="black", facecolor="white", linewidth=1)
-    geo_df['geometry'].plot(ax=ax, facecolor=color, marker='.', markersize=14)
+    # plot bike routes
+    city.plot(ax=ax, alpha=alpha, edgecolor="black", facecolor="white", linewidth=1, label='Bike lanes')
+
+    # plot dock locations
+    geo_df['geometry'].plot(ax=ax, facecolor=color, marker='.', markersize=14, label='Current bike docks')
 
     plt.xlim([-74.05, -73.65])
     plt.ylim([40.54, 40.92])
@@ -73,6 +76,7 @@ def map_nyc_citibike_docks(geo_df, color='lightseagreen', alpha=0.4):
                     bottom=False,
                     labelleft=False,
                     labelbottom=False)
+    plt.legend(frameon=False)
     return ax
 
 
