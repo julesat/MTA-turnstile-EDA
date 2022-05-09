@@ -32,7 +32,7 @@ I also looked into the difference between exits and entries within peak hours, a
 
 The top ten recommended sites and their average weekday traffic are shown in a bar graph, but I found geographical plots more informative to connect information between the bikeshare network and MTA stations. I plotted maps based on the bike lane infrastructure and borough boundaries to visualize the process of selecting MTA station locations outside of the Citibike network and near bike lanes, and included a heatmap in one result to show the volume of rush hour station traffic.
 
-### Tools:
+### Tools
 
 - SQL data ingestion, querying the database with SQLAlchemy
 - Data cleaning and visualization with Pandas
